@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "53994717668",
+    "project_id": "island-goods",
+    "storage_bucket": "island-goods.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53994717668:android:4cb6daa70a386ea6e147f1",
+        "android_client_info": {
+          "package_name": "com.islandgoods.island_goods"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53994717668-si0l6hcb1q04f6q0v179bdfmqq57f1ln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.islandgoods.island_goods",
+            "certificate_hash": "bac689bb9d59ce07aabb70976dc076eb5b74fac6"
+          }
+        },
+        {
+          "client_id": "53994717668-lq5l7vhfkrlong0sdlvmaqf2dffc21cj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSGeHy5H0KYu_ifxbqcJntY0JhrArDCkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53994717668-lq5l7vhfkrlong0sdlvmaqf2dffc21cj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

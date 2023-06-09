@@ -4,7 +4,7 @@
             "outputFile": "com.example.island_goods.app-mergeDebugResources-21:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\Downloads\\island_goods\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\user\\OneDrive\\Desktop\\island_goods\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

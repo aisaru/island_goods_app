@@ -8,23 +8,7 @@ class ItemListWidget extends StatefulWidget {
 
 class _ItemListWidgetState extends State<ItemListWidget> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  List<String> _itemImage = [];
-
-  @override
-  void initState() {
-    super.initState();
-    getItems();
-  }
-
-  Future<void> getItems() async {
-    final QuerySnapshot querySnapshot =
-        await _firestore.collection('items').get();
-    final List<String> itemImages =
-        querySnapshot.docs.map((doc) => doc['imageUrl'] as String).toList();
-    setState(() {
-      _itemImage = itemImages;
-    });
-  }
+  List<CartItem> cartItems = [];
 
   @override
   Widget build(BuildContext context) {
@@ -48,76 +32,82 @@ class _ItemListWidgetState extends State<ItemListWidget> {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 clipBehavior: Clip.hardEdge,
-                child: InkWell(
-                  splashColor: Colors.blue.withAlpha(30),
-                  onTap: () {
-                    debugPrint('Item card tapped.');
-                  },
-                  child: SizedBox(
-                    height: 120,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 100,
-                          child: Image.network(
-                            imageUrl,
-                            fit: BoxFit.cover,
-                            errorBuilder: (context, error, stackTrace) {
-                              return Placeholder();
-                            },
+                child: SizedBox(
+                  height: 120,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 100,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              imageUrl,
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) {
+                                return Placeholder();
+                              },
+                            ),
                           ),
                         ),
-                        SizedBox(width: 8),
-                        Expanded(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      name,
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                      ),
+                      SizedBox(width: 8),
+                      Expanded(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    name,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
                                     ),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      description,
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.grey,
-                                      ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    description,
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.grey,
                                     ),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      '\$$price',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.blue,
-                                      ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    '\$$price',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.blue,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                              SizedBox(width: 8),
-                              ElevatedButton(
+                            ),
+                            SizedBox(width: 8),
+                            Padding(
+                              padding: EdgeInsets.all(15),
+                              child: ElevatedButton(
                                 onPressed: () {
-                                  debugPrint('Add to Cart tapped.');
+                                  addToCart(item);
                                 },
                                 child: Text('Add to Cart'),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -127,4 +117,43 @@ class _ItemListWidgetState extends State<ItemListWidget> {
       },
     );
   }
+
+  void addToCart(DocumentSnapshot item) {
+    final String itemId = item.id;
+    final String name = item['name'] as String;
+    final double price = (item['price'] ?? 0).toDouble();
+
+    setState(() {
+      bool itemExists = false;
+      for (var cartItem in cartItems) {
+        if (cartItem.itemId == itemId) {
+          cartItem.quantity++;
+          itemExists = true;
+          break;
+        }
+      }
+      if (!itemExists) {
+        cartItems.add(CartItem(
+          itemId: itemId,
+          name: name,
+          price: price,
+          quantity: 1,
+        ));
+      }
+    });
+  }
+}
+
+class CartItem {
+  final String itemId;
+  final String name;
+  final double price;
+  int quantity;
+
+  CartItem({
+    required this.itemId,
+    required this.name,
+    required this.price,
+    this.quantity = 1,
+  });
 }

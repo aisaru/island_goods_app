@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:island_goods/views/buyers/nav_screens/account_screen.dart';
 import 'package:island_goods/views/buyers/nav_screens/cart_screen.dart';
-// import 'package:island_goods/views/buyers/nav_screens/category_screen.dart';
 import 'package:island_goods/views/buyers/nav_screens/home_screen.dart';
-// import 'package:island_goods/views/buyers/nav_screens/search_screen.dart';
-// import 'package:island_goods/views/buyers/nav_screens/store_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -18,10 +15,9 @@ class _nameState extends State<MainScreen> {
 
   List<Widget> _pages = [
     Homescreen(),
-    // CategoryScreen(),
-    // StoreScreen(),
-    CartScreen(),
-    // SearchScreen(),
+    CartScreen(
+      cartItems: [],
+    ),
     Accountscreen(),
   ];
 

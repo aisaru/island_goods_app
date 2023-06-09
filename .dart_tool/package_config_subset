@@ -146,6 +146,10 @@ meta
 2.12
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.9.1/
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.9.1/lib/
+nested
+2.12
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0/
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0/lib/
 path
 2.12
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.8.3/
@@ -162,6 +166,10 @@ plugin_platform_interface
 2.17
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.4/
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.4/lib/
+provider
+2.12
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5/
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5/lib/
 source_span
 2.14
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.9.1/
@@ -212,8 +220,8 @@ file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.2.2/
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.2.2/lib/
 island_goods
 2.19
-file:///C:/Users/user/Downloads/island_goods/
-file:///C:/Users/user/Downloads/island_goods/lib/
+file:///C:/Users/user/OneDrive/Desktop/island_goods/
+file:///C:/Users/user/OneDrive/Desktop/island_goods/lib/
 sky_engine
 3.0
 file:///C:/src/flutter/bin/cache/pkg/sky_engine/

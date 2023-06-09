@@ -1,10 +1,10 @@
-#Fri Jun 09 21:16:15 PKT 2023
-base.0=C\:\\Users\\user\\Downloads\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\user\\Downloads\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\user\\Downloads\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.3=C\:\\Users\\user\\Downloads\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.4=C\:\\Users\\user\\Downloads\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.5=C\:\\Users\\user\\Downloads\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Sat Jun 10 00:42:38 PKT 2023
+base.0=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.4=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.5=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

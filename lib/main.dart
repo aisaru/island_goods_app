@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:island_goods/views/buyers/main_screen.dart';
+import 'package:island_goods/views/buyers/nav_screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Brand-Bold',
       ),
-      home: MainScreen(),
+      home: Login(),
     );
   }
 }

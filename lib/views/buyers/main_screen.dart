@@ -14,10 +14,10 @@ class _nameState extends State<MainScreen> {
   int _pageIndex = 0;
 
   List<Widget> _pages = [
-    Homescreen(),
-    CartScreen(
-      cartItems: [],
+    Homescreen(
+      userName: '',
     ),
+    CartScreen(),
     Accountscreen(),
   ];
 

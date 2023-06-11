@@ -1,4 +1,4 @@
-#Sat Jun 10 00:42:38 PKT 2023
+#Sun Jun 11 12:39:13 PKT 2023
 base.0=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

@@ -97,11 +97,40 @@ class _ItemListWidgetState extends State<ItemListWidget> {
                             SizedBox(width: 8),
                             Padding(
                               padding: EdgeInsets.all(15),
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  addToCart(item);
-                                },
-                                child: Text('Add to Cart'),
+                              child: Container(
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color.fromRGBO(255, 149, 0, 1),
+                                      Color.fromRGBO(240, 198, 140, 1),
+                                    ],
+                                  ),
+                                ),
+                                child: Material(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: () {
+                                      addToCart(item);
+                                    },
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 16),
+                                      child: Center(
+                                        child: Text(
+                                          'Add to Cart',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ],

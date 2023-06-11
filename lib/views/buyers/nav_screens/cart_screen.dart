@@ -1,20 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:island_goods/views/buyers/nav_screens/providers/cart_provider.dart';
+import 'package:island_goods/views/buyers/nav_screens/widgets/item_list_widget.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
+  @override
+  _CartScreenState createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  List<CartItem> cartItems = [];
+
+  double get totalAmount {
+    double total = 0;
+    for (var cartItem in cartItems) {
+      total += cartItem.price * cartItem.quantity;
+    }
+    return total;
+  }
+
+  int get totalQuantity {
+    int quantity = 0;
+    for (var cartItem in cartItems) {
+      quantity += cartItem.quantity;
+    }
+    return quantity;
+  }
+
+  void addToCart(CartItem cartItem) {
+    setState(() {
+      cartItems.add(cartItem);
+    });
+  }
+
+  void removeFromCart(CartItem cartItem) {
+    setState(() {
+      cartItems.remove(cartItem);
+    });
+  }
+
+  void clearCart() {
+    setState(() {
+      cartItems.clear();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final cartProvider = Provider.of<CartProvider>(context);
-    final cartItems = cartProvider.cartItems;
-
-    double totalAmount = 0;
-    int totalQuantity = 0;
-
-    for (var cartItem in cartItems) {
-      totalAmount += cartItem.price * cartItem.quantity;
-      totalQuantity += cartItem.quantity;
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart'),
@@ -46,5 +76,3 @@ class CartScreen extends StatelessWidget {
     );
   }
 }
-
-class Provider {}

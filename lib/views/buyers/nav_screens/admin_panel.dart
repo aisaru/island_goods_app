@@ -359,7 +359,7 @@ class _ItemListWidgetState extends State<ItemListWidget> {
                                   IconButton(
                                     onPressed: () {
                                       // Perform delete action
-                                      print("delete");
+                                      _deleteItem(context, itemId);
                                     },
                                     icon: const Icon(Icons.delete),
                                   ),

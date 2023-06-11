@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:island_goods/views/buyers/main_screen.dart';
 import 'package:island_goods/views/buyers/nav_screens/admin_panel.dart';
 import 'widgets/signup_screen.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   TextEditingController emailController = TextEditingController();
@@ -24,16 +30,28 @@ class Login extends StatelessWidget {
       final User? user = userCredential.user;
 
       if (user != null) {
-        if (email == 'sys@admin.com' && password == 'sysadmin') {
+        // User is authenticated, make authenticated requests to Firebase services
+        final idToken = await user.getIdToken();
+        final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+        // Get the user document from Firestore
+        final userDoc =
+            await firestore.collection('buyers').doc(user.uid).get();
+
+        if (user.uid == 'uivGA07tFHVzguZprGn1vywQrM13') {
+          // User is an admin, navigate to AdminPanel
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => AdminPanel()),
           );
-        } else {
+        } else if (userDoc.exists) {
+          // User document found, navigate to MainScreen
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => MainScreen()),
           );
+        } else {
+          // User document not found, handle accordingly
         }
       } else {
         print('Invalid email or password');
@@ -118,6 +136,7 @@ class Login extends StatelessWidget {
                             padding: EdgeInsets.all(8.0),
                             child: TextField(
                               controller: passwordController,
+                              obscureText: true,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "Password",
@@ -176,7 +195,7 @@ class Login extends StatelessWidget {
                         );
                       },
                       child: Text(
-                        "Not a member? Sign Up",
+                        "Don't have an account? Sign Up",
                         style: TextStyle(
                           color: Color.fromRGBO(255, 149, 0, 1),
                         ),

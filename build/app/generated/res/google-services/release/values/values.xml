@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">53994717668-lq5l7vhfkrlong0sdlvmaqf2dffc21cj.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">53994717668</string>
+    <string name="google_api_key" translatable="false">AIzaSyBSGeHy5H0KYu_ifxbqcJntY0JhrArDCkM</string>
+    <string name="google_app_id" translatable="false">1:53994717668:android:4cb6daa70a386ea6e147f1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBSGeHy5H0KYu_ifxbqcJntY0JhrArDCkM</string>
+    <string name="google_storage_bucket" translatable="false">island-goods.appspot.com</string>
+    <string name="project_id" translatable="false">island-goods</string>
+</resources>

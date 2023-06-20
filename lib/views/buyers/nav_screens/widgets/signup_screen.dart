@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:island_goods/views/buyers/main_screen.dart';
+import 'package:island_goods/views/buyers/nav_screens/login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -274,7 +274,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MainScreen()),
+          MaterialPageRoute(builder: (context) => Login()),
         );
       } else {
         print('Failed to create user');

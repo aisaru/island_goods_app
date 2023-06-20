@@ -34,6 +34,10 @@ class _AdminPanelState extends State<AdminPanel> {
     }
   }
 
+  deleteddata(id) async {
+    await FirebaseFirestore.instance.collection("items").doc(id).delete();
+  }
+
   Future<void> _uploadItem() async {
     final String name = nameController.text;
     final String description = descriptionController.text;

@@ -1,0 +1,4 @@
+#Tue Jun 20 19:27:51 PKT 2023
+base.0=C\:\\Users\\user\\OneDrive\\Desktop\\island_goods\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
